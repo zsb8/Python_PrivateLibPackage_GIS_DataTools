@@ -94,6 +94,8 @@ pip install wb_data_tools_gis-1.3.tar.gz
 ![image](https://user-images.githubusercontent.com/75282285/158899775-97d32a4d-37d5-4847-89d9-a233f32dd212.png)
 
 
+#  the data from the Statistics Canada
+![image](https://user-images.githubusercontent.com/75282285/185015538-432e5fa5-baba-4f93-b468-eca20c8b8700.png)
 
 
 
