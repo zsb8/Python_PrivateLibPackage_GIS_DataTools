@@ -1,5 +1,5 @@
 # data-tools-gis
-Only for GIS private package
+Only for GIS private package.    
 Enter the geographic coordinates, and then get which area this coordinate corresponds to from the Statistics Canada data package. Result is the area code.   
 
 # How to install this private Python package through install original code from Github?
