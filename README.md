@@ -114,6 +114,11 @@ Add the table, then find the map.
 Different layers. 
 ![image](https://user-images.githubusercontent.com/75282285/196701305-afa776af-cf66-4580-9de1-8ceb68716cc6.png)
 
+# Defines
+
+csd define : the URL(https://www12.statcan.gc.ca/census-recensement/2016/ref/dict/az2-eng.cfm?topic=az2 )     
+FED define : the URL(https://www12.statcan.gc.ca/census-recensement/2016/ref/dict/geo025-eng.cfm)    
+
 #  Find the geocode with geopandas
 ~~~
 import geopandas
