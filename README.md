@@ -98,7 +98,7 @@ pip install wb_data_tools_gis-1.3.tar.gz
 ![image](https://user-images.githubusercontent.com/75282285/185015538-432e5fa5-baba-4f93-b468-eca20c8b8700.png)
 ## How to get data from the statistic Canada?
 ![image](https://user-images.githubusercontent.com/75282285/185015610-d4750f2d-8952-4d39-8869-20ba6a0d2ccb.png)     
-The .shp files can be download from here URL.  [download](https://www12.statcan.gc.ca/census-recensement/2011/geo/bound-limit/bound-limit-2016-eng.cfm)    
+The .shp and .shx files can be download from here URL.  [download](https://www12.statcan.gc.ca/census-recensement/2011/geo/bound-limit/bound-limit-2016-eng.cfm)    
 
 Notes! The data is EPSG:3347 format, not EPSG:26918 format.
 ![image](https://user-images.githubusercontent.com/75282285/196702323-93590ac8-5a2f-474d-acbd-7fe020a965f8.png)
@@ -114,8 +114,27 @@ Add the table, then find the map.
 Different layers. 
 ![image](https://user-images.githubusercontent.com/75282285/196701305-afa776af-cf66-4580-9de1-8ceb68716cc6.png)
 
-#  Find geocode with geopandas
+#  Find the geocode with geopandas
+~~~
+import geopandas
+print(geopandas.__version__)
+data = geopandas.read_file('D:/waybase_gis_functions/data/lcsd000a16a_e.shx')
+print(type(data))
+print(data.columns)
+ccsuid = data.loc[:, ['CCSUID']]
+print(ccsuid)
+list_ccsuid = ccsuid.values.tolist()
+print(list_ccsuid)
+for i in list_ccsuid:
+    if i == ['4810048']:
+        print("find it, 4810048")
+        break
 
+for i in list_ccsuid:
+    if i == ['1213004']:
+        print("find it, 1213004")
+        break
+~~~
 ![image](https://user-images.githubusercontent.com/75282285/196704838-7a1d62fe-f19b-4931-8b71-936a6d818603.png)
 
 
