@@ -137,4 +137,42 @@ for i in list_ccsuid:
 ~~~
 ![image](https://user-images.githubusercontent.com/75282285/196704838-7a1d62fe-f19b-4931-8b71-936a6d818603.png)
 
+# Judge if the point in the area with geopandas.
+This is a simple sample:
+~~~
+import geopandas
+import pandas as pd
+from shapely.geometry import Point, Polygon
+data = [
+      {"a":1,"b":5,"point":[-104.497882, 52.328702]},
+      {"a":2,"b":6,"point":[-79.246943, 42.985294]},
+      {"a":3,"b":7,"point":[-73.759167, 45.363935]}
+      ]
+index = [0, 1, 2]
+columns = ["a", "b", "point"]
+df = pd.DataFrame(data, index, columns)
+lst_point = df['point'].tolist()    # [[-104.497882, 52.328702], [-79.246943, 42.985294], [-73.759167, 45.363935]]
+print(lst_point)
+df['geometry'] = df['point'].apply(lambda x: Point(x[0], x[1]) if x else None)
+geo_df = geopandas.GeoDataFrame(df)
+geo_df = geo_df.set_crs('EPSG:4326')
+geo_df = geo_df.to_crs('EPSG:3347')
+print(geo_df)
+print(geo_df.crs)
+gdf = geopandas.read_file('D:/waybase_gis_functions/data/lcsd000a16a_e.shp')
+def get_geo(point):
+      # point = [5354427.099, 1881290.575]
+      # p1 = Point(point[0], point[1])
+      # print(p1)
+      # a = get_geo(p1)
+      # print(a)
+      df_temp = gdf
+      df_temp['geocode'] = df_temp['geometry'].apply(lambda x: True if x.contains(point) else False)
+      geocode = df_temp.loc[gdf["geocode"]==True]['CSDUID']
+      geo = '' if geocode.empty else str(geocode.values[0])
+      print(f"geo=={geo}")
+      return geo
+geo_df['geocode'] = geo_df['geometry'].apply(lambda x: get_geo(x))
+print(geo_df)
+~~~
 
