@@ -98,7 +98,7 @@ pip install wb_data_tools_gis-1.3.tar.gz
 ![image](https://user-images.githubusercontent.com/75282285/185015538-432e5fa5-baba-4f93-b468-eca20c8b8700.png)
 ## How to get data from the statistic Canada?
 ![image](https://user-images.githubusercontent.com/75282285/185015610-d4750f2d-8952-4d39-8869-20ba6a0d2ccb.png)
-The [download] URL (https://www12.statcan.gc.ca/census-recensement/2011/geo/bound-limit/bound-limit-2016-eng.cfm)
+The [download](https://www12.statcan.gc.ca/census-recensement/2011/geo/bound-limit/bound-limit-2016-eng.cfm) URL.
 
 Notes! The data is EPSG:3347 format, not EPSG:26918 format.
 ![image](https://user-images.githubusercontent.com/75282285/196702323-93590ac8-5a2f-474d-acbd-7fe020a965f8.png)
