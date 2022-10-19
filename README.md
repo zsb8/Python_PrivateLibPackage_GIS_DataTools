@@ -187,7 +187,5 @@ SELECT ST_Contains(
     (SELECT geom FROM lct_000a16a_e WHERE gid = 1),
     st_geometryfromtext('POINT(8980216 2151065)', 26918)
     );
-****
-![image](https://user-images.githubusercontent.com/75282285/196709620-54712c45-9f49-46da-943b-d2d54630697d.png)
-
 ~~~
+![image](https://user-images.githubusercontent.com/75282285/196709620-54712c45-9f49-46da-943b-d2d54630697d.png)
