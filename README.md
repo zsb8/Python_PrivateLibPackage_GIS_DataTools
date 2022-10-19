@@ -142,8 +142,9 @@ for i in list_ccsuid:
 ~~~
 ![image](https://user-images.githubusercontent.com/75282285/196704838-7a1d62fe-f19b-4931-8b71-936a6d818603.png)
 
-# Judge if the point in the area with geopandas.
-This is a simple sample:
+# Judge if the point in the area
+This is a simple sample. Two ways.
+## (1) Use geopandas
 ~~~
 import geopandas
 import pandas as pd
@@ -180,4 +181,13 @@ def get_geo(point):
 geo_df['geocode'] = geo_df['geometry'].apply(lambda x: get_geo(x))
 print(geo_df)
 ~~~
+## (2) Use SQL of PosgreSQL
+~~~
+SELECT ST_Contains(
+    (SELECT geom FROM lct_000a16a_e WHERE gid = 1),
+    st_geometryfromtext('POINT(8980216 2151065)', 26918)
+    );
+****
+![image](https://user-images.githubusercontent.com/75282285/196709620-54712c45-9f49-46da-943b-d2d54630697d.png)
 
+~~~
