@@ -116,8 +116,8 @@ Different layers.
 
 # Defines
 
-csd define : the URL(https://www12.statcan.gc.ca/census-recensement/2016/ref/dict/az2-eng.cfm?topic=az2 )     
-FED define : the URL(https://www12.statcan.gc.ca/census-recensement/2016/ref/dict/geo025-eng.cfm)    
+CSD definition : the URL(https://www12.statcan.gc.ca/census-recensement/2016/ref/dict/az2-eng.cfm?topic=az2 )     
+FED definition : the URL(https://www12.statcan.gc.ca/census-recensement/2016/ref/dict/geo025-eng.cfm)    
 
 #  Find the geocode with geopandas
 ~~~
