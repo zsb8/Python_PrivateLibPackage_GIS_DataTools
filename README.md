@@ -103,7 +103,10 @@ pip install wb_data_tools_gis-1.3.tar.gz
 # How to show the map in QGIS?
 First, load the .shp files into the PostgreSQL. Then QGIS connect to the PostgreSQL table.
 ![image](https://user-images.githubusercontent.com/75282285/196698338-602eeff7-1174-430b-a669-04f688193118.png)
-
+Select the .shp files. 
+![image](https://user-images.githubusercontent.com/75282285/196700707-95c126b4-8492-4afd-9529-2dbc6f92cd93.png)
+Add the table, then find the map.
+![image](https://user-images.githubusercontent.com/75282285/196700961-94ad9644-5100-484e-9417-67c3479f7fd3.png)
 
 
 
