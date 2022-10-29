@@ -36,7 +36,7 @@ You can not need to input the boundary_path because it will use the .shp which b
 The folder is '/wbdt/shapfiles/Tour_Boundaries.shp'
 In my case, the folder will be '/usr/local/lib/python3.8/dist-packages/wbdt_gis/shapefiles/Tour_Boundaries.shp'
 Test code: 
-~~~
+~~~python
 from wbdt_gis import gis
 import pandas as pd
 mydf = pd.DataFrame({'my_point': [[-104.497882, 52.328702], [-79.246943, 42.985294]]})
@@ -49,7 +49,7 @@ print(result_test)
 ## 2. You can input the boundary path.
 You can run these commends to get the geocode with Statistics Canada 2016 Census Boundary files. 
 You can input the boundary path, such as '/home/zsb/waybase_package/lcma000a16a_e.shp'.
-~~~
+~~~python
 from wbdt_gis import gis
 import pandas as pd
 mydf = pd.read_csv('/home/zsb/waybase_package/gis.csv')
@@ -120,7 +120,7 @@ CSD definition : the URL(https://www12.statcan.gc.ca/census-recensement/2016/ref
 FED definition : the URL(https://www12.statcan.gc.ca/census-recensement/2016/ref/dict/geo025-eng.cfm)    
 
 #  Find the geocode with geopandas
-~~~
+~~~python
 import geopandas
 print(geopandas.__version__)
 data = geopandas.read_file('D:/waybase_gis_functions/data/lcsd000a16a_e.shx')
@@ -145,7 +145,7 @@ for i in list_ccsuid:
 # Judge if the point in the area
 This is a simple sample. Two ways.
 ## (1) Use geopandas
-~~~
+~~~python
 import geopandas
 import pandas as pd
 from shapely.geometry import Point, Polygon
@@ -182,7 +182,7 @@ geo_df['geocode'] = geo_df['geometry'].apply(lambda x: get_geo(x))
 print(geo_df)
 ~~~
 ## (2) Use SQL of PosgreSQL
-~~~
+~~~sql
 SELECT ST_Contains(
     (SELECT geom FROM lct_000a16a_e WHERE gid = 1),
     st_geometryfromtext('POINT(8980216 2151065)', 26918)
