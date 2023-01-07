@@ -1,3 +1,5 @@
+**These sample codes will show  you my expertise. They do not contain any confidential information.**   
+
 # data-tools-gis
 Only for GIS private package.    
 Enter the geographic coordinates, and then get which area this coordinate corresponds to from the Statistics Canada data package. Result is the area code.   
